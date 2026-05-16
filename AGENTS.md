@@ -47,6 +47,7 @@ to this repo. Override with the `CONTENT_DIR` env variable.
 ## Deploy
 
 Push to `main` → GitHub Actions:
+
 1. Checks out this repo and `trsvax/tapestry-nocode`
 2. `npm ci && npm run build` — generates `out/` and `out/content.json`
 3. Syncs `out/` to `s3://<bucket>/books/tapestry-nocode/`
