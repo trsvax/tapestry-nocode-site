@@ -39,6 +39,13 @@ jobs:
         env:
           CONTENT_DIR: ${{ github.workspace }}/content-repo
 
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: out
+          path: site-repo/out/
+          overwrite: true
+
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
