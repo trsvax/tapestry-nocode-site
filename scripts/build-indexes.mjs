@@ -1,5 +1,5 @@
-// build-indexes.mjs — generates content.json after next build
-// Output: out/content.json — synced to S3 as /books/tapestry-nocode/content.json
+// build-indexes.mjs — generates index.json after next build
+// Output: out/index.json — synced to S3 as /books/tapestry-nocode/index.json
 import fs from "node:fs";
 import path from "node:path";
 
@@ -38,8 +38,8 @@ const chapters = files.map((filename) => {
 });
 
 fs.writeFileSync(
-  path.join(OUT_DIR, "content.json"),
+  path.join(OUT_DIR, "index.json"),
   JSON.stringify({ version: 1, book: "tapestry-nocode", chapters }, null, 2),
 );
 
-console.log(`content.json: ${chapters.length} chapter(s)`);
+console.log(`index.json: ${chapters.length} chapter(s)`);

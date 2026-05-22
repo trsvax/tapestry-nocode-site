@@ -29,7 +29,7 @@ app/
     page.tsx          Individual chapter — generateStaticParams + marked render
 
 scripts/
-  build-indexes.mjs   Generates out/content.json after next build
+  build-indexes.mjs   Generates out/index.json after next build
 
 .github/
   workflows/
@@ -49,7 +49,7 @@ to this repo. Override with the `CONTENT_DIR` env variable.
 Push to `main` → GitHub Actions:
 
 1. Checks out this repo and `trsvax/tapestry-nocode`
-2. `npm ci && npm run build` — generates `out/` and `out/content.json`
+2. `npm ci && npm run build` — generates `out/` and `out/index.json`
 3. Syncs `out/` to `s3://<bucket>/books/tapestry-nocode/`
 4. Invalidates CloudFront at `/books/tapestry-nocode/*`
 
